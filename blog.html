@@ -1,25 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Blog - Savan Visalpara</title>
+  <title> How do computers see an image ? </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style>
+  #title{
+  	background-color: #3399FF;
+  	height:200px;
+  	width:100%;
+  }
+  #title h1{
+  	color:#FFFFE0;
+  	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  	font-weight: bold;
+  	word-spacing: 4px;
+  	letter-spacing:3px;
+  	margin-top:70px;
+  }
+  #main-body{
+  	width:700px;
+  	text-align: center;
+  }
+  #main-body h2{
+  	font-weight:bold;
+  	color:#3399FF;
+  	font-family: lucida sans;
+  	padding: 30px 0px 30px 0px;
+  }
+
+  #title a{
+  	text-decoration: none;
+  }
+  #post p{
+  	word-wrap:break-word;
+  	font-size :18px;
+  	font-family: lucida sans;
+    text-decoration: none;
+  }
+  
+  #img{
+  	margin-top:30px;
+  	margin-bottom:30px;
+  	height:250px;
+  	width:300px;
+  }
+  #cap{
+  	color:gray;
+  	font-style: italic;
+  }
+  #s-text{
+  	color:black;
+  	font-size: 22px;
+  	font-family: papyrus;
+  	font-weight: bold;
+  }
+  #head{
+  	margin:30px 0px 30px 0px;
+  }
+  #footer{
+  	height:80px;
+  	background-color: #3399FF;
+  	width:100%;
+
+  }
+  #footer p{
+  	color:white;
+  	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  	font-weight: bold;
+  	word-spacing: 4px;
+  	letter-spacing:3px;
+  	margin-top:30px;
+  }
+  #footer a{
+  	text-decoration: none;
+  	color:white;
+  }
+  #desc-blog{
+  	color:black;
+  	font-size: 15px;
+  	font-family: lucida sans;
+  }
+   @media (max-width: 768px){
+    #title h1{
+      font-size:19px;
+    }
+    #s-text{
+      font-size:14px;
+    }
+    #desc-blog{
+      font-size:14px;
+    }
+    #main-body{
+      width:330px;
+    }
+   }
+  </style>
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="blog.html"><p style="color:white">Blog - </p><p style="color:white; opacity:0.6">Savan Visalpara</p></a>
-    </div>
-    <a href="index.html">
-    	<button class="btn btn-danger navbar-btn">Home</button>
+<div class="container text-center" id="title">
+  <a href="./blog.html"><h1> <span id="s-text">  </span> BLOG - SAVAN VISALPARA <span id="s-text">  </span></h1>
+  </a><br />
+  <span id="desc-blog"> [ Posts on Artificial Intelligence, Machine Learning, Computer Vision, NLP and Programming ] </span><br>
+</div>
+<div class="container " id="main-body">
+  <div class="container-fluid text-center" id="post"> 
+    <a href="blog/median-filter.html">
+      <h2> Machine Learning - An Overview </h2>
+      <p> Machine Learning is the sub-field of Artificial Intelligence which has got a lot of attention because of it's ability to solve many problems efficiently. In this post, I am trying to provide a brief of overview of Machine Leanring and various Machine Learning algorithms. Read more...</p>
     </a>
   </div>
-</nav>
+	<div class="container-fluid text-center" id="post"> 
+    <a href="blog/median-filter.html">
+      <h2> Demystifying median filter</h2>
+      <p> We all love to see beautiful images, but have you ever thought how do computers see an image? In this blog post, I will give a thorough explanation of how do computers deal with an image. Read more...</p>
+    </a>
+  </div>
+  <hr>
+  <div class="container-fluid text-center" id="post">  
+    <a href="blog/how-computers-see-image.html">
+      <h2> How do computers see an image? </h2>
+      <p> We all love to see beautiful images, but have you ever thought how do computers see an image? In this blog post, I will give a thorough explanation of how do computers deal with an image. Read more...</p>
+    </a>
+  </div>
+
+</div>
 
 </body>
 </html>
+	

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> How do computers see an image ? </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style>
+  #title{
+  	background-color: #3399FF;
+  	height:200px;
+  	width:100%;
+  }
+  #title h1{
+  	color:#FFFFE0;
+  	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  	font-weight: bold;
+  	word-spacing: 4px;
+  	letter-spacing:3px;
+  	margin-top:70px;
+  }
+  #main-body{
+  	width:700px;
+  	text-align: center;
+  }
+  #main-body h1{
+  	font-weight:bold;
+  	color:#3399FF;
+  	font-family: lucida sans;
+  	padding: 30px 0px 30px 0px;
+  }
+  #title a{
+  	text-decoration: none;
+  }
+  #main-body p{
+  	word-wrap:break-word;
+  	font-size :18px;
+  	font-family: lucida sans;
+  }
+  
+  #img{
+  	margin-top:30px;
+  	margin-bottom:30px;
+  	height:250px;
+  	width:300px;
+  }
+  #cap{
+  	color:gray;
+  	font-style: italic;
+  }
+  #s-text{
+  	color:black;
+  	font-size: 22px;
+  	font-family: papyrus;
+  	font-weight: bold;
+  }
+  #head{
+  	margin:30px 0px 30px 0px;
+  }
+  #footer{
+  	height:80px;
+  	background-color: #3399FF;
+  	width:100%;
+
+  }
+  #footer p{
+  	color:white;
+  	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  	font-weight: bold;
+  	word-spacing: 4px;
+  	letter-spacing:3px;
+  	margin-top:30px;
+  }
+  #footer a{
+  	text-decoration: none;
+  	color:white;
+  }
+  #desc-blog{
+  	color:black;
+  	font-size: 15px;
+  	font-family: lucida sans;
+  }
+   @media (max-width: 768px){
+    #title h1{
+      font-size:19px;
+    }
+    #s-text{
+      font-size:14px;
+    }
+    #desc-blog{
+      font-size:14px;
+    }
+    #main-body{
+      width:330px;
+    }
+   }
+  </style>
+</head>
+<body>
+
+<div class="container text-center" id="title">
+  <a href="http://blog.savanvisalpara.com"><h1> <span id="s-text"> blog. </span> SAVAN VISALPARA <span id="s-text"> .com </span></h1>
+  </a><br />
+  <span id="desc-blog"> [ Posts on Artificial Intelligence, Machine Learning, Computer Vision, NLP and Programming ] </span>
+</div>
+<div class="container " id="main-body">
+	<h1> How do computers see an image ? </h1>
+	
+	<p align="justify">	We all love to see beautiful images, but have you ever thought how do computers see an image? In this blog post, I will give a thorough explanation of how do computers deal with an image. </p> 
+	
+	<img id="img"  src="./images/cat.jpg" alt="grayscale image of cat"> 
+	
+	<p align="justify"> Consider the above image, a normal human can easily tell that, there is a cat in the image. But, can computers really see the cat ? The answer is no, computers see a matrix of numbers ( between 0 to 255 ). Broadly, we can classify images as grayscale images or color images. First of all, I will discuss grayscale images then color. Above image is a grayscale image means each pixel represents the brightness of a pixel. Know more about <a href="https://en.wikipedia.org/wiki/Pixel"> pixel </a>. Let me first show you what computers see in the case of above image. </p>
+
+	<img id="img" src="./images/im2.png" >
+
+	<p align="justify"> I've resized above image to 18 * 18 in order to make it easy to understand. Unlike us, the computers see an image as a 2D matrix. You might have heard people saying that this image is of size 1800*700 or 1300 * 700. This size shows width and height of an image. In other words, if size is 1300 * 700 then there are 1300 pixels horizontally and 700 vertically. That means there are total 910000 (1300*700) pixels. If the image is the size of 700 * 500 then the dimensionality of the matrix will be ( 700, 500). Here, <b> each element(pixel) in the matrix represents the intensity of brightness in that pixel </b>. Here, 0 represents black and 255 represents white color. </p>
+
+		<h2 id="head"> Color Images </h2>
+
+	<p align="justify"> In grayscale images, each pixel represents the intensity of only one color. In other words, it has one channel. Whereas in color images we have 3 channels RGB (red, green, blue). Standard digital camera will have 3 (RGB) channels.</p>
+
+	<img src="./images/3channles.png" id="img"> <figcaption id="cap"> [ Source : tripleleft.com ] </figcaption>
+	<br /><br />
+	<p align="justify">  As you can see in above image, the color image is composed of three channels red, green and blue. Now the question is, how do computers see this image? Again, the answer is they see the matrix. now the next question should be, how do we represent this image in the matrix since it has 3 channels, unlike grayscale images where we had only one channel. In this case, we will have 3D matrix. We have one matrix for one channel, but in this case, we'll have three matrices stacked onto each other, that's why it's 3D. Dimensionality of 700 * 700 color image will be (700, 700, 3). Let's say, the first matrix represents red channel, then each element of that matrix represents an intensity of red color in that pixel, likewise in green and blue. In general, each pixel in color image has three numbers (0 to 255) associated with it. These numbers represent intensity of red, green and blue color in that particular pixel.
+	</p>
+	<h2 id="head"> Conclusion </h2>
+	<p align="justify">  Computers see an image as a matrix. Grayscale images have one channel ( gray ), thus we can represent grayscale images in the 2D matrix, where each element represents the intensity of brightness in that particular pixel. Remember, 0 means black and 255 means white. Grayscale images have one channel, whereas color images have three channels RGB (red, green, blue). We can represent color images in the 3D matrix where the depth will be 3. 
+	</p><br />
+
+</div>
+
+</body>
+</html>
+	
