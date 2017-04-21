@@ -4,9 +4,9 @@
   <title> Demystifying median filter </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script src="../css/jquery.min.js"></script>
+  <script src="../css/bootstrap.min.js"></script>
   <style>
   #title{
   	background-color: #3399FF;
@@ -101,9 +101,10 @@
 <body>
 
 <div class="container text-center" id="title">
-  <a href="http://blog.savanvisalpara.com"><h1> <span id="s-text"> blog. </span> SAVAN VISALPARA <span id="s-text"> .com </span></h1>
+  <a href="./blog.html"><h1> <span id="s-text"> </span> SAVAN VISALPARA <span id="s-text"> </span></h1>
   </a><br />
   <span id="desc-blog"> [ Posts on Artificial Intelligence, Machine Learning, Computer Vision, NLP and Programming ] </span>
+  <br><span id="time"> Posted on 24 Sep, 2016</span>
 </div>
 <div class="container " id="main-body">
 	<h1> Demystifying median filter </h1>
@@ -117,11 +118,11 @@
    <h3> Median Filter </h3><br />
 	<p align="justify"> The median filter is normally used to reduce noise in an image. The median filter considers each pixel in the image in turn and looks at its nearby neighbors to apply changes to given pixel. In median filter, it replaces current pixel value with median of neighboring pixel values. But wait, how many neighbors should I consider? Answer is, it depends on the size of a filter. If it is a 3*3 filter then given pixel is considered as a center element of a 3*3 matrix. Filter size could be 5*5 or anyother value. Basically we use 3*3 and 5*5. Throughout in this post I will use 3*3 to make it easy to understand. Please note,  most of the filters are using convolution matrix. Convolution is a treatment of a matrix by another one which is called filter or kernel. By convolution we mean sliding filter/kernel over an image (in order to modify pixel values).</p>
 
-  <img src="./images/3by3.jpg" id="img"><figcaption>[Source: GIMP]</figcaption><br />
+  <img src="images/3by3.jpg" id="img"><figcaption>[Source: GIMP]</figcaption><br />
   <p align="justify">
   Consider above image. Here, we're working with pixel whose value is 50 (shown in red). Since we have filter of size 3*3, our filter will neighboring pixels will be as shown in green areas, which are <i> 40,42,46,46,55,52,56 </i> and <i> 58 </i>. To find a median, first of all, we have to sort above values including current pixel value(50). Now our vector will become <i>40,42,46,46,50,52,55,56,58</i>. It's median will be 50, so in this case value won't be changed. Likewise, we apply this process to all the pixels. resulting matrix will be our filtered image.</p>
-  <img src="./images/enb.jpg" id="img" ><figcaption> [Noisy Image]</figcaption>
-  <img src="./images/filtered.jpg" id="img"><figcaption> [Filtered Image]</figcaption>
+  <img src="images/enb.jpg" id="img" ><figcaption> [Noisy Image]</figcaption>
+  <img src="images/filtered.jpg" id="img"><figcaption> [Filtered Image]</figcaption>
   </p>
 	<h2 id="head"> Conclusion </h2>
 	<p align="justify"> Filtering is a technique used to modify or enhance images. In other words, it's a particular effect which we want to apply to an image. Median filter is a non-linear digital filtering technique. Median filter can be used to reduce noise in an image. Back side of median image is resulting image can be blur. Implementation of a median filter in python can be found <a href="https://github.com/savan77/Median-Filter">here</a>.
