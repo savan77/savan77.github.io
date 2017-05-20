@@ -1,0 +1,10 @@
+add code in the post
+
+add reference
+
+add links
+
+add style, font color bg etc
+
+
+for decision trees see sebastian raschka
