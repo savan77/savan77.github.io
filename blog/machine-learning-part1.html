@@ -233,19 +233,12 @@
       <p align="justify"> 5. Repeat steps <b> 3 </b> and <b> 4</b> until convergence. In other words, repeat step 3 and 4 until \(J(w)\) < 0.0003. The number 0.0003 was chosen randomly.</p>
     </div>
 
+    <h2> Cross Validation </h2>
+    <p align="justify"> One of the critical task in machine learning is model evaluation, that is, to test how well a model performs on unseen data. Here, we will see <b> Cross Validation </b> which is the model evaluation method. It's not a good idea to test our model on a dataset which we used to train a model since it won't give any indication of how well our model performs on unseen data, in other words, how well our model generalizes to unseen data. <b> Generalization</b> is the desirable characteristic we want in a model. We can overcome this problem by not using entire training data while training a model. Instead we will hold out some data (test data) and we'll train only on remaining data. Once the training is over we can use test data to test the performance of a model.  For example, we can split our whole dataset into 70/30 ratio. That is, we use 70% data to traing and 30% data to test a model.</p>
 
-
-
-
-
-
-
-
-
-
-
-
-
+    <p align="justify"> The <b> holdout method </b> is the simplest kind of cross validation method. Which exactly what I explained above. We split our dataset into two parts, training and testing datasets. We use training dataset to train a model and testing dataset to evaluate the performance of a model.</p>
+    <p align="justify"> In <b> K-fold cross validation </b>, the dataset is divided into k seperate parts. We repeat training process k times, each time, holding out one subset to test a model and remaining data can be used to train a model. Then we average the error to evaluate a model.</p>
+    <p align="justify"> The <b> Leave-one-out cross validation</b> is the special instance of k-fold cross validation. In which, k is equal to the number of data points in the dataset. Each time, we hold out a single data point and train a model on rest of the data. We use this one data point to test our model. Then we calculate the average error to evaluate a model.</p> 
 
     <h2> Learning = Representation + Evaluation + Optimization </h2>
     <p align="justify"> You might have concluded in your mind that supervised learning is all about finding weights which minimize our cost. And that's true. But let us dig deeper and gain some insights on how learning really works. We will discuss this in depth for the classification problems since there are the widely used ones. We can divide learning phase in three parts - <b> Representation, Evaluation </b> and <b> Optimization </b>.</p>
@@ -256,6 +249,13 @@
     <p align="justify"> One of the most important problem in the machine learning is called <b> Overfitting</b>. Overfitting happens when a model performs too well on training data but does not perform well on unseen data. It happens when a model learns the noise present in the training data. Conversely, when a model does not perform well on training data as well as unseen data then that is known as <b> Underfitting</b>.</p>
     <img src="./images/lin_reg4.png">
     <figcaption>[ Figure - 6 ]</figcaption>
+    <p align="justify"> If we fit \(y\) = \(w_0 + w_1 x_1\) to a dataset, we get the straight line as show above in figure - 6. Note, this is not a good fit since it does not pass through many points. This is the instance of underfitting. Now, if we add another feature x<sup>2</sup> and fit \(y\) = \(w_0 + w_1 x_1 + w_2 x^2\) then we'll get fitting as shown below in figure -7. This slightly better than previous since it passes through several points.</p>
+    <img src="./images/lin_reg5.png">
+    <p align="justify"> If we add more features we'll get better fit. Below figure shows an instance of this case. This is overfitting. Note that it's polynomial fitting and we can represent n-th order polynomial as \(y\) = \(\sum\limits_{i=0}^n w_i x^i \).</p>
+    <img src="./images/lin_reg6.png">
+    <p align="justify"> Even though fitted curve passes through almost all points, it won't perform good on unseen data. It has just memorized the training data. Now we will see widely used methods to overcome the problem of overfitting. </p>
+      
+    </p>  
 </div>
 
 </body>
