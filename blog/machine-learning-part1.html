@@ -106,6 +106,59 @@
     #main-body{
       width:330px;
     }
+    ol li{
+      font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      font-size:18px;
+
+    }
+    ol li span{
+      margin-right:-370px;
+    }
+    #outlier{
+      margin-right: -400px;
+    }
+    ul li h3{
+      margin-right: -370px;
+    }
+    #mob_img{
+      margin-left:-63px;
+      width:430px;
+      height:370px;
+    }
+    #mob_img2{
+      margin-left:-25px;
+      height:280px;
+      width:330px;
+    }
+    #mob_img3{
+      height:280px;
+      width:380px;
+      margin-right: 0px;
+    }
+    #mob_img4{
+      height:280px;
+      width:380px;
+      margin-left: -20px; 
+    }
+    #mob_img5{
+      height:260px;
+      width:340px;
+      margin-left: -25px; 
+    }
+    #mob_img6{
+      margin-left:-35px;
+      height:320px;
+      width:420px;
+    }
+    #mob_img7{
+      margin-left:-35px;
+      height:300px;
+      width:400px;
+    }
+    #outlier1{
+      margin-left:-400px;
+    }
+    
   }
    ol li{
           font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -135,7 +188,7 @@
         <li><a href="#regularization"><span style="position: relative; left:-255px"> Regularization</span></a></li>
         <li><a href="#crossval"><span style="position: relative; left:-248px"> Cross Validation</span></a></li>
 
-  <li><a href="#learning"> <span style="position: relative; left: -95px">Learning = Representation + Evaluation + Optimization</span> </a></li>
+  <li id="outlier"><a href="#learning"> <span id="outlier1" style="position: relative; left: -95px">Learning = Representation + Evaluation + Optimization</span> </a></li>
     
 
 
@@ -199,11 +252,11 @@
     </table><br><br>
   <p align="justify"> In linear regression, <b>our task is to establish a relationship between target variable and input variables by fitting a line</b>. This line is known as <b>regression line</b>. This line can be represented as a linear equation <b> y = m * X + b</b>. Where, y - target variable, X - input data, m - slope, b - intercept. An intercept represents the intersection of regression line with y axis. Now we can plot our dataset as follows :</p>
    
-  <img  src="./images/lin_reg1.png" alt="linear regression plotting"> 
+  <img  src="./images/lin_reg1.png" alt="linear regression plotting" id="mob_img"> 
         <figcaption>[ Figure - 1 ]</figcaption><br>
 
   <p align="justify">Apparently, we can fit <b>n</b> number of lines by tweaking coefficients <b>m</b> and <b>b</b> as shown below.</p>
-  <img id="img" src="./images/lin_reg2.png" alt="line fitting" >
+  <img id="img" src="./images/lin_reg2.png" alt="line fitting">
   <figcaption>[ Figure - 2 ]</figcaption><br>
     </table><br>
 
@@ -217,17 +270,17 @@
 
   \(J(w)\) = \(\frac{1}{2}\sum\limits_{i=1}^n (y(x^i) - y_t^i)^2\)  </p><br>
   <p align="justify"> As I mentioned earlier, this cost function calculates how far y's are from the corresponding y<sub>true</sub>'s. We can show this in the graph as shown in figure - 3. Basically, our cost function calculates the distance between true target and predicted target which is shown in the graph as lines between sample points and the regression line. This is called <b> residual</b>. </p>
-  <img src="./images/lin_reg3.png" alt="cost function visualization">
+  <img src="./images/lin_reg3.png" alt="cost function visualization" id="mob_img2">
   <figcaption>[ Figure - 3 ]</figcaption><br>
   <p align="justify"> For each value of weight, there will be some cost or an error. We want to find the value of weights for which cost is minimum. We can visualize this as follows : </p>
-  <img src="./images/grad_desc1.png" alt="gradient descent">
+  <img src="./images/grad_desc1.png" alt="gradient descent" id="mob_img3">
   <figcaption>[ Figure - 4 ]</figcaption><br>
   <p align="justify"> As you can see, we get some value of cost/error for each value of weight. Here, I have used the word "global" and the reason is- In case of non-convex shape there will be more than one minimum but we want to find out the global minimum. For simplicity, I have used convex shape in above figure.</p>
   <br></div>
 
   <h2 id="grad"> Gradient Descent </h2>
   <p align="justify">  Essentially, what we do in supervised learning problems is finding the best weights for our model. Hence, our task becomes optimization task. <b> Gradient Descent</b> is one of the most popular and widely used optimization algorithm. Gradient descent can be used to minimize a cost function \(J(w)\) parameterized by a model's parameters \(w \in \mathbb{R}^d \) by updating the parameters/weights in the opposite direction of the gradient of the cost function \(\nabla_w J(w)\) w.r.t to the parameters. Mathematically we can write as <br><br> \(w_n = w - \eta \cdot \nabla_w J( w)\) <br><br> Here, \(\eta\) is the learning rate which determines the size of the steps we take to reach a minimum. We need to be very careful about this parameter since high value of \(\eta\) may overshoot the minimum and very low value will reach minimum very slowly.</p></br>
-  <img src="./images/grad_desc2.png">
+  <img src="./images/grad_desc2.png" id="mob_img4">
   <figcaption>[ Figure - 5 ]</figcaption>
   <p align="justify"> There are three variants of gradient descent- Batch Gradient Descent, Stochastic Gradient Descent and Mini-batch Gradient Descent. <b> Batch gradient descent</b> computes the gradient of the cost function w.r.t to parameter w for <b> entire training data</b>. Since we need to calculate the gradients for the whole dataset to perform one parameter update, batch gradient descent can be very slow. <b> Stochastic gradient descent</b> computes the gradient for <b>each training example \(x^i\).</b> <b> Mini-batch gradient descent</b> computes the gradient for <b>every mini-batch of m training example</b>. If you are curious about gradient descent and its variants then check out <a href="http://sebastianruder.com/optimizing-gradient-descent/">this post</a> by Sebastin Ruder.
 
@@ -268,7 +321,7 @@
       &nbsp; &nbsp; &nbsp; \(y(z)\) = \(\frac{1}{1 + e^z}\)
       <br><br>
       We can plot <b> y(z) </b> as follows : <br><br>
-      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="./images/sigmoid.png" width="500">
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="./images/sigmoid.png" width="500" id="mob_img5">
       <figcaption>[Source : Wikipedia]</figcaption><br><br></p>
       <p align="justify">
       A sigmoid function squashes the input value between [0,1] so that we can interpret output as a probability. One desirable property of sigmoig function is that it is differential and it has non-negative derivative at each point.<br><br>
@@ -296,13 +349,13 @@ P(y=0|x) &amp;= 1 - P(y=1|x) = 1 - h_w(x)
   <div id="overfitting">
     <h2> Overfitting </h2><br>
     <p align="justify"> One of the most important problem in the machine learning is called <b> Overfitting</b>. Overfitting happens when a model performs too well on training data but does not perform well on unseen data. It happens when a model learns the noise present in the training data. Conversely, when a model does not perform well on training data as well as unseen data then that is known as <b> Underfitting</b>.</p>
-    <img src="./images/lin_reg4.png">
+    <img src="./images/lin_reg4.png" id="mob_img6">
     <figcaption>[ Figure - 6 ]</figcaption><br>
     <p align="justify"> If we fit \(y\) = \(w_0 + w_1 x_1\) to a dataset, we get the straight line as show above in figure - 6. Note, this is not a good fit since it does not pass through many points. This is the instance of underfitting. Now, if we add another feature x<sup>2</sup> and fit \(y\) = \(w_0 + w_1 x_1 + w_2 x^2\) then we'll get fitting as shown below in figure -7. This slightly better than previous since it passes through several points.</p>
-    <img src="./images/lin_reg5.png">
+    <img src="./images/lin_reg5.png" id="mob_img7">
     <figcaption>[ Figure - 7 ]</figcaption><br>
     <p align="justify"> If we add more features we'll get better fit. Below figure shows an instance of this case. This is overfitting. Note that it's polynomial fitting and we can represent n-th order polynomial as \(y\) = \(\sum\limits_{i=0}^n w_i x^i \).</p>
-    <img src="./images/lin_reg6.png">
+    <img src="./images/lin_reg6.png" id="mob_img7">
     <figcaption>[ Figure - 8 ]</figcaption><br>
     <p align="justify"> Even though fitted curve passes through almost all points, it won't perform good on unseen data. It has just memorized the training data. Several ways to avoid overfitting are : </p>
     <div id="points">
@@ -338,7 +391,7 @@ P(y=0|x) &amp;= 1 - P(y=1|x) = 1 - h_w(x)
     <p align="justify"> <b> Optimization : </b> We need a method to find the best classifier in hypothesis space. Here comes the optimization. The choice of optimization technique determines the efficiency of a learner. Gradient descent optimization technique which we discussed earlier is the first-order optimization technique.</p>
       <br>
     </p>  
-    <p align="justify"> In this part I explained what machine learning is, different types of machine learning, linear regression and several methods to make it more accurate. In the <a href="machine-learning-part1.html">next part</a>, I will explain Support Vector Machine and tree based algorithms.</p><br><br>
+    <p align="justify"> In this part I explained what machine learning is, different types of machine learning, linear regression and several methods to make it more accurate. You can find code for this part <a href="https://savan77.github.io/blog/lab-machine-learning-part1.html">here</a>. In the <a href="machine-learning-part2.html">next part</a>, I will explain Support Vector Machine and tree based algorithms.</p><br><br>
 </div>
 
 </body>
