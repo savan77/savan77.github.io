@@ -378,7 +378,7 @@ P(y=0|x) &amp;= 1 - P(y=1|x) = 1 - h_w(x)
     <br><p align="justify"> <b>L1 regularization</b> is the same as L2 with the only difference that instead of adding \(\frac{\lambda}{2} ||w^2||\) to each weight <b> w</b> we add \(\frac{\lambda}{2}||w||\). <br>
        <br>\(J(w)\) = \(\frac{1}{2}\sum\limits_{i=1}^n (y(x^i) - y_t^i)^2 + \frac{\lambda}{2} ||w||\)<br></p>
     <br>
-    <p align="justify"> One interesting property of L1 regularization is that model's parameters become sparse during optimization. If you don't want this property in your model then <b> L2 regularization is always preferred over L1 regularization</b>.</p>
+    <p align="justify"> One interesting property of L1 regularization is that model's parameters become sparse during optimization. If you don't want this property in your model then <b> L2 regularization is always preferred over L1 regularization</b>. Please note, ordinary least square (which we saw earlier in linear regression) with l2 regularization is known as <b> Ridge Regression</b> and with l1 regularization it is known as <b> Lasso Regression</b>.</p>
   </div><br>
     
 
