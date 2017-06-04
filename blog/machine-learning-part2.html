@@ -11742,6 +11742,94 @@ div#notebook {
     page-break-inside: avoid; 
   }
 }
+#title{
+    background-color: #3399FF;
+    height:200px;
+    width:100%;
+  }
+  #title h1{
+    color:#FFFFE0;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-weight: bold;
+    word-spacing: 4px;
+    letter-spacing:3px;
+    margin-top:70px;
+  }
+  #main-body{
+    width:700px;
+    text-align: center;
+  }
+  #main-body h1{
+    font-weight:bold;
+    color:#3399FF;
+    font-family: lucida sans;
+    padding: 30px 0px 30px 0px;
+  }
+  #title a{
+    text-decoration: none;
+  }
+  #main-body p{
+    word-wrap:break-word;
+    font-size :18px;
+    font-family: lucida sans;
+  }
+  
+  #img{
+    margin-top:30px;
+    margin-bottom:30px;
+    height:250px;
+    width:300px;
+  }
+  #cap{
+    color:gray;
+    font-style: italic;
+  }
+  #s-text{
+    color:black;
+    font-size: 22px;
+    font-family: papyrus;
+    font-weight: bold;
+  }
+  #head{
+    margin:30px 0px 30px 0px;
+  }
+  #footer{
+    height:80px;
+    background-color: #3399FF;
+    width:100%;
+
+  }
+  #footer p{
+    color:white;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-weight: bold;
+    word-spacing: 4px;
+    letter-spacing:3px;
+    margin-top:30px;
+  }
+  #footer a{
+    text-decoration: none;
+    color:white;
+  }
+  #desc-blog{
+    color:black;
+    font-size: 15px;
+    font-family: lucida sans;
+  }
+   @media (max-width: 768px){
+    #title h1{
+      font-size:19px;
+    }
+    #s-text{
+      font-size:14px;
+    }
+    #desc-blog{
+      font-size:14px;
+    }
+    #main-body{
+      width:330px;
+    }
+   }
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
@@ -11772,7 +11860,12 @@ div#notebook {
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
-
+<div class="container text-center" id="title">
+  <a href="../blog.html"><h1> <span id="s-text"> </span> BLOG - SAVAN VISALPARA <span id="s-text"> </span></h1>
+  </a><br />
+  <span id="desc-blog"> [ Posts on Artificial Intelligence, Machine Learning, Computer Vision, NLP and Programming ] </span>
+  <br><span id="time"> Posted on 27 May, 2017</span>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
