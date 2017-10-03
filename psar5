@@ -1,0 +1,15 @@
+A novel method for deception detection is introduced. Traditional methods in this area were comprised of various computer vision techniques and were not as effective as this one. Previously, we were not able to infer if the concerned person has deceptive intention or not. This system capture image of person of interest in sequence, which in itself is a novel idea. 
+
+
+It is often hard to infer if a person we are dealing with has deceptive intention or not. The method presented here proposes a novel system to identify a person with deceptive intention. The cardinal part of this system is the image processing module which takes a sequence of images of a person and produces output stating whether the concerned person has malicious intention or not. The image processing module is trained on a training set comprising a set of subjects for which emotional state is known(i.e whether a person has deceptive intention). The notification device provides a notification of at least one of the person's detected invisible emotional states.
+
+
+A system for deception detection is presented. The system is comprised of a camera, image processing unit and a notification unit. The camera, when directed, takes a set of images of a person in a sequence. This images are then sent to image processing module and processed to output an emotional state of a person. The notification unit then provides a notfication to the user.
+
+Training an image classifier for object detection using neural networks;
+An embedded system consisting of units mentioned in this invention;
+An algorithm to identify person's emotional state through a set of images of him or her;
+
+
+The system presented in this patent uses a sequence of images to identify person's emotional state. I think, this can be made more accurate if we capture a video of a person rather than a sequence of images.
+

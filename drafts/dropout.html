@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title> Dropout </title>
+	</head>
+	<style>
+	body{font-size:18px;    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	width:800px; margin-left:280px; word-spacing: 2px; line-height: 170%}
+</style>
+	<body>
+		<p><i> Originally published at <a href="https://www.commonlounge.com/community/9dcdd386cc28446695305db00d2de532">Commonlounge</a>.</i></p>
+		<br><br>
+		<h2> Dropout </h2>
+		<p> This tutorial is about Dropout which is widely used regularization technique for neural networks. This tutorial intends to explain what is overfitting and regularization, what is dropout, why do we need dropout and why it improves the performance of neural networks.</p>
+		<h3> Motivation </h3>
+		<p align="justify"> Neural Networks especially Deep Neural Networks are very powerful machine learning systems. Nowadays, they are the backbone of most of (alsmost all) machine learning systems in production. The great learning ability of Neural Networks comes with a serious problem of "Overfitting". Overfitting is a very important topic in machine learning, it arises when our learning system performs well on training data but do not perform well on test data. That is, our learning system is not robust. In other words, our learning system has memorized the training data and that's why it performs well on training data. And since our learning system hasn't learned important patterns, it fails to perform well on test data. Now, you may ask, how do we tacke it? The answer is- Regularization. Regularization intends to introduce Generalization in machine learning systems. If you know about Linear Regression and similar algorithms then you are likely to know about L2 and L1 regularization. Dropout is a regularization technique widely used in (Deep) Neural Networks. It improves the performance of the learning system (i.e Neural Network) on various tasks of computer vision, natural language processing and speech. In the following sections, we will see how dropout works, why it improves the performance of a neural network and will conclude this tutorial by implementing a simple neural network with dropout using TensorFlow.</p>
+
+		<h3> What is dropout? </h3>
+		<p align="justify"> Dropout is a regularization technique where randomly selected neurons along with their connections are ignored during training(both forward and backward pass). A neuron (or a unit) is dropped out with probability 1-p, in other words, a neuron is kept with probability p. This way, a reduced neural network will be left. Here, neurons to be ignored are selected randomly with probability 1-p. As mentioned in original paper, 0.5 for p seems to work best on wide range of tasks. So, we drop out the neurons with probability 0.5. By drop out I mean setting output of randomly selected neurons to zero. In case of input neurons, optimal probability of retention is usually closer to 1. Here is how dropped-out neural network looks like:</p>
+		<img src="dropout.png" width="700" height="400">
+		<figcaption><b>Left:</b> A standard neural network without Dropout, <b>Right:</b> A neural network with Dropout <br>
+		Source: Srivastava, et al.'Dropout: A Simple Way to Prevent Neural Networks from Overfitting'</figcaption>
+
+		<p align="justify"> At test time, we do not ignore any neurons, that is, we do not apply dropout during test time. Instead, all neurons will be multiplied by p. Following is the figure from the original paper that shows the same.</p>
+		<img src="testtime.png" width="800" height="300">
+
+
+		<h3> Why dropout works?</h3>
+		<p align="justify"> A logical question to ask now is that why dropout works, why it improves the performance of neural networks. As we discussed earlier, dropout is a regularization technique which prevents overfitting. During training process in a fully connected neural network, neurons develop co-dependency amongst each other which leads model to the overfitting. In contrast, when we use dropout a neuron cannot rely on other neurons and this is how it reduces co-adaptations of neurons.</p>
+
+		<h3> Implementing A Neural Network with Dropout in TensorFlow </h3>
+		<pre>
+	#import necessary libraries
+	import tensorflow as tf
+	from tensorflow.examples.tutorials.mnist import input_data 
+
+	#we will be using mnist dataset
+	mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
+	
+	#create placeholders for the input and output
+	X = tf.placeholder()
+
+		</pre>
+	</body>
+</html>
+
