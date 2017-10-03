@@ -28,6 +28,8 @@
 		<p align="justify"> A logical question to ask now is that why dropout works, why it improves the performance of neural networks. As we discussed earlier, dropout is a regularization technique which prevents overfitting. During training process in a fully connected neural network, neurons develop co-dependency amongst each other which leads model to the overfitting. In contrast, when we use dropout a neuron cannot rely on other neurons and this is how it reduces co-adaptations of neurons.</p>
 
 		<h3> Implementing A Neural Network with Dropout in TensorFlow </h3>
+		<p align="justify"> Since this post is about dropout, I assume users know about neural networks and a little bit about tensorflow. I will try to make the code self-contained. Here, I use the standard method of developing and training machine learning models. Please note, there is a lot of room for improvement and optimization in a below given code but the sole purpose of this code is to demonstrate how to use dropout in tensorflow. We will implement a neural network with two hidden layers and will use dropout on both of these layers.</p>
+
 		<pre>
 	#import necessary libraries
 	import tensorflow as tf
@@ -35,9 +37,58 @@
 
 	#we will be using mnist dataset
 	mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
-	
+
 	#create placeholders for the input and output
-	X = tf.placeholder()
+	X = tf.placeholder(tf.float32, shape=[None,784])
+	y = tf.placeholder(tf.float32, shape=[None,10])
+
+	#parameters of the model
+	W1 = tf.Variable(tf.truncated_normal([784,200], stddev=0.1))
+	b1 = tf.Variable(tf.ones([200]))
+	W2 = tf.Variable(tf.truncated_normal([200,100], stddev=0.1))
+	b2 = tf.Variable(tf.ones([100]))
+	W3 = tf.Variable(tf.truncated_normal([100,10], stddev=0.1))
+	b3 = tf.Variable(tf.ones([10]))
+
+	#"p"-probability that a neuron is kept
+	keep_prob = tf.placeholder(tf.float32)
+
+	y1 = tf.nn.relu(tf.add(tf.matmul(X, W1),b1))
+	y1_dropout = tf.nn.dropout(y1, keep_prob) #apply dropout to each layer
+
+	y2 = tf.nn.relu(tf.add(tf.matmul(y1, W2), b2))
+	y2_dropout = tf.nn.dropout(y2, keep_prob)
+
+	y_logits = tf.add(tf.matmul(y2, W3), b3)
+	y_hat = tf.nn.softmax(y_logits)
+
+	#cost function
+	cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=y_logits, labels=y))
+
+	#optimizer, we will use Adam
+	train_step = tf.train.AdamOptimizer(0.001).minimize(cost)
+
+	#accuracy
+	true_pred = tf.equal(tf.argmax(y_hat,1), tf.argmax(y,1))
+	accuracy = tf.reduce_mean(tf.cast(true_pred, tf.float32))
+
+	#train the model
+	sess = tf.Session()
+	init = tf.global_variables_initializer()
+	sess.run(init)
+
+	for i in range(1000):
+		batch_X, batch_y = mnist.train.next_batch(128)
+		sess.run(train_step, {X:batch_X, y:batch_y, keep_prob:0.5})
+		if i % 100 == 0 :  #print accuracy and cost after every 100 iterations
+			acc , cost_v = sess.run([accuracy, cost], {X:batch_X, y:batch_y, keep_prob: 1})
+			print("Iteration number:",i)
+			print("Accuracy",acc)
+			print("Cost", cost_v)
+
+
+	</pre>
+	<p align="justify"> Please note, I haven't added a code snippet to test accuracy on test data. As you might have noticed, it is very easy to implement dropout in tensorflow. In fact, we do not need to know all the theories and mathematics behind it in order to use it in tensorflow. Here, I got approximately 95% accuracy.
 
 		</pre>
 	</body>
