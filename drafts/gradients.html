@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title> Do I need to calculate the gradient manually?</title>
+		<style type="text/css">
+			body{
+				font-size:18px;
+				font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+				width:750px; 
+				margin-left:310px; 
+				word-spacing: 2px; 
+				line-height: 170%
+			}
+		</style>
+	</head>
+	<body>
+
+		<h2> Do I need to calculate the gradients manually?</h2>
+		<p align="justify"> Most of us use frameworks like TensorFlow to build and train machine learning models. Such frameworks allow us to focus on important things (i.e the architecure of the model) and let it do the rest of the work. Calculating gradients of the parameters is an example of the redundant work they do for us. Although these frameworks calculate gradients for us, it is always a good idea to know about how they look like, and how they behave in different circumstances.</p>
+
+		<p align="justify"> [Dead Unit in Relu] Currently, very popular choice for non-linearity is ReLU, which stands for rectified linear unit. In ReLU, neuron fires when the input is greater than 0. Otherwise, it will be zero. Sometimes, a large gradients flowing through the neuron (with ReLU) could cause weight update in such a way that the neuron will never activate again. That is, every gradients flowing through that neuron will be zero. Such neurons are called "Dead Units/Neurons". Important thing to note here is that once a neuron ends up in this state, it's unlikely to recover. The reason is, the function gradient at 0 is also 0. We can address this issue by setting a small positive gradient for negative inputs. This type of units are called "Leaky ReLU".</p>
+
+		<p align="justify"> [Saturated Sigmoid Unites] One common problem with sigmoid unit is vanishing and exploding gradients. Vanishing gradient problem occurs when even large changes in parameters of early layers do not make any difference in the output of the network. That is, the gradients of the network's output with respect to the parameters of early layers of a network becomes very small. This results in no learning in early layers. Similarly, when these gradients are too large 
+
+
+
+	</body>
+</html>
