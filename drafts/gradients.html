@@ -17,9 +17,26 @@
 		<h2> Do I need to calculate the gradients manually?</h2>
 		<p align="justify"> Most of us use frameworks like TensorFlow to build and train machine learning models. Such frameworks allow us to focus on important things (i.e the architecure of the model) and let it do the rest of the work. Calculating gradients of the parameters is an example of the redundant work they do for us. Although these frameworks calculate gradients for us, it is always a good idea to know about how they look like, and how they behave in different circumstances.</p>
 
-		<p align="justify"> [Dead Unit in Relu] Currently, very popular choice for non-linearity is ReLU, which stands for rectified linear unit. In ReLU, neuron fires when the input is greater than 0. Otherwise, it will be zero. Sometimes, a large gradients flowing through the neuron (with ReLU) could cause weight update in such a way that the neuron will never activate again. That is, every gradients flowing through that neuron will be zero. Such neurons are called "Dead Units/Neurons". Important thing to note here is that once a neuron ends up in this state, it's unlikely to recover. The reason is, the function gradient at 0 is also 0. We can address this issue by setting a small positive gradient for negative inputs. This type of units are called "Leaky ReLU".</p>
+		<p align="justify"> Let's say you know how to calculate gradients manually and you are implementing a deep neural network from scratch. When we calculate the gradients manually, its always a good idea to know whether they are correct or not. We can perform gradient checking to see how much accurate the computed gradients are. We use following formula to numerically approximate the derivative at a particular point /theta.
+			[photo]
+		</p>
 
-		<p align="justify"> [Saturated Sigmoid Unites] One common problem with sigmoid unit is vanishing and exploding gradients. Vanishing gradient problem occurs when even large changes in parameters of early layers do not make any difference in the output of the network. That is, the gradients of the network's output with respect to the parameters of early layers of a network becomes very small. This results in no learning in early layers. Similarly, when these gradients are too large 
+		<p align="justify"> Here, EPSILON is a small constant(i.e 10 raise to -4). We can compare this value with the value computed by the function which we use for gradient calculation. Next, we will discuss how extreme value of gradients causes various problems in neural networks.</p> 
+
+		<p align="justify"> 
+
+		<p align="justify"> [Dead Unit in Relu] Currently, very popular choice for non-linearity is ReLU, which stands for rectified linear unit. [equation]In ReLU, neuron fires when the input is greater than 0. Otherwise, it will be zero. Sometimes, a large gradients flowing through the neuron (with ReLU) could cause weight update in such a way that the neuron will never activate again. That is, every gradients flowing through that neuron will be zero. Such neurons are called "Dead Units/Neurons". Important thing to note here is that once a neuron ends up in this state, it's unlikely to recover. The reason is, the function gradient at 0 is also 0. The most probable reason behind this problem is [very high learning rate]. So, try decreasing the learning rate first when you face this problem. Another possible way to address this issue is by setting a small positive gradient for negative inputs. This type of units are called "Leaky ReLU".</p>
+
+		<p align="justify"> [Saturated Sigmoid Unites] One common problem with sigmoid unit is vanishing and exploding gradients. Vanishing gradient problem occurs when even large changes in parameters of early layers do not make any difference in the output of the network. That is, the gradients of the network's output with respect to the parameters of early layers of a network becomes very small. This results in no learning in early layers. Similarly, exploding gradients is the case when these gradients are too large. One possible solution for exploding gradient problem is the gradient clipping[link]. In case of vanishing gradient problem, the reason can be weight initialization especially when you are using sigmoid or tanh as a non-linearity. An improper weight initialization may cause neurons saturate and ultimately stop the learning.</p>
+
+		<p align="justify"> One of the top highlights on Medium[link] is from the post of Andrej Karpathy, which is as follows: [quote] if you’re using sigmoids or tanh non-linearities in your network and you understand backpropagation you should always be nervous about making sure that the initialization doesn’t cause them to be fully saturated </p>
+
+		<p align="justify"> So, make sure you carefully initialize the weights of the network and use ReLU or similar non-linearities.</p>
+
+		<p align="justify"> Another property of the gradient, when using sigmoid, is that it achieves a maximum at 0.25. Please note that we are referring to the local gradient of the sigmoid function which is [z(1-z)]. Here, we acheive maximum when z=0.5. As we know, local gradient will be multiplied by the gradient recieved from previous layer to calculate the final gradient at this neuron. In other words, every time a gradinet signal flows through a sigmoid unit its magnitude will be reduced by 0.25. </p>
+
+		[Cost Function]
+		<p align="justify"> 
 
 
 
