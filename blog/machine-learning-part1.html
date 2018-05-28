@@ -231,15 +231,15 @@
 
   <p id="types">
     <p align="justify">
-      We can divide various Machine Learning algorithms in three types which are as follows:</p><br>
+      Broadly, we can classify various Machine Learning algorithms in three types which are as follows:</p><br>
     <ul>
       <li>
         <h3 style="margin-left: -409px"> Supervised Learning </h3>
-        <p align="justify"> Currently, most of the machine learning products use <b> Supervised Learning</b>. In this, we have a set of features or inputs (i.e image - X) and our model will predict a target or output variable (i.e caption of an image - y).<br> <p style="text-align: center"> y = f(X) </p><p align="justify"> In other words, our model learns a function that maps inputs to desired outputs. That's why it is also called as <b>function approximation</b>. Sometimes, features are refered as <b>independent variables</b> and targets as <b>dependent variable</b>. Supervised learnign problems can be further grouped into classification and regression problems. When the output variable is a category, such as "spam" or "ham" then it is known as <strong> classification </strong> problem. When the output variable is a real value, such as "price of the house" then it is known as <strong> regression</strong> problem. Examples : Linear Regression, Decision Tree, KNN etc.</p>
+        <p align="justify"> Among all these types <b> Supervised Learning</b> methods are most widely used machine learning methods. Roughly every machine learning method is about mapping. We can think of a machine learning model as a function of some parameters ( i.e weights ), which maps some input x to output y. We have a set of features or inputs (i.e image - X) and our model will predict a target or output variable (i.e caption of an image - y). <br> <p style="text-align: center"> y = f(X, w) </p><p align="justify"> In other words, our model learns a function that maps inputs to desired outputs. That's why it is also called as <b>function approximation</b>. In order to make this function accurate we need to find optimal values of <b> w </b>. In supervised learning, we leverage labelled dataset and optimizing methods to find optimal values of parameters (w). That's why it's called supervised. Here, our labelled data works as a supervisor. Sometimes, features are refered as <b>independent variables</b> and targets as <b>dependent variable</b>. Supervised learnign problems can be further grouped into classification and regression problems. When the output variable is a category, such as "spam" or "ham" then it is known as <strong> classification </strong> problem. When the output variable is a real value, such as "price of the house" then it is known as <strong> regression</strong> problem. Examples : Linear Regression, Decision Tree, KNN etc.</p>
       </li><br>
       <li>
         <h3 style="margin-left: -380px"> Unsupervised Learning </h3>
-        <p align="justify"> In Unsupervised Learning, we have input data (X) but no corresponding output variable (y). Goal of unsupervised learning is to model the distribution of the data in order to learn more about the data. Unsupervised Learning problems can be futher grouped into clustring and association problems. When we want to discover inherent groupings in the input data it is known as <a href="https://en.wikipedia.org/wiki/Cluster_analysis"><b> clustering</b> </a>problem. When we want to discover rules that describe portions of the input data it is known as <b> association </b> problem.</p>
+        <p align="justify"> In Unsupervised Learning, we have input data (X) but no corresponding output variable (y). That is, we don't have lablled data. Goal of unsupervised learning is to model the distribution of the data in order to learn more about the data. Unsupervised Learning problems can be futher grouped into clustring and association problems. When we want to discover inherent groupings in the input data it is known as <a href="https://en.wikipedia.org/wiki/Cluster_analysis"><b> clustering</b> </a>problem. When we want to discover rules that describe portions of the input data it is known as <b> association </b> problem. Dimensionality reduction is also one type of unsupervised learning.</p>
       </li><br>
       <li>
         <h3 style="margin-left: -372px"> Reinforcement Learning </h3>
@@ -253,7 +253,7 @@
     
     <h2> Linear Regression </h2><br>
     <p align="justify">
-      Now, we will see various supervised learning algorithms and we will start with very simple yet powerful one called <b> Linear Regression</b>. As I mentioned earlier, supervised learning problems can be divided into two types of problems- <i>Regression</i> and <i> Classification</i>. As name suggests, linear regression is used for regression problems, that is, when target variable is a real value.</p>
+      Now, we will see various supervised learning algorithms and we will start with very simple yet powerful one called <b> Linear Regression</b>. As I mentioned earlier, supervised learning problems can be divided into two types of problems- <i>Regression</i> and <i> Classification</i>. As the name suggests, linear regression is used for regression problems, that is, when target variable is a real value.</p>
     <p align="justify"> Let's start with an example, suppose we have a dataset containing house area and the price of the house and our task is to build a machine learning model which can predict the price of the house given the area of the house. Here is how our dataset looks like,</p><br>
 
     <table border="1" border-collapse="collapse" align="center">
@@ -303,7 +303,7 @@
   <br></div>
 
   <h2 id="grad"> Gradient Descent </h2>
-  <p align="justify">  Essentially, what we do in supervised learning problems is finding the best weights for our model. Hence, our task becomes optimization task. <b> Gradient Descent</b> is one of the most popular and widely used optimization algorithm. Gradient descent can be used to minimize a cost function \(J(w)\) parameterized by a model's parameters \(w \in \mathbb{R}^d \) by updating the parameters/weights in the opposite direction of the gradient of the cost function \(\nabla_w J(w)\) w.r.t to the parameters. Mathematically we can write as <br><br> \(w_n = w - \eta \cdot \nabla_w J( w)\) <br><br> Here, \(\eta\) is the learning rate which determines the size of the steps we take to reach a minimum. We need to be very careful about this parameter since high value of \(\eta\) may overshoot the minimum and very low value will reach minimum very slowly.</p></br>
+  <p align="justify">  Essentially, what we do in supervised learning problems is finding the best weights for our model. Hence, our task becomes an optimization task. <b> Gradient Descent</b> is one of the most popular and widely used optimization algorithm. Gradient descent can be used to minimize a cost function \(J(w)\) parameterized by a model's parameters \(w \in \mathbb{R}^d \) by updating the parameters/weights in the opposite direction of the gradient of the cost function \(\nabla_w J(w)\) w.r.t to the parameters. Mathematically we can write as <br><br> \(w_n = w - \eta \cdot \nabla_w J( w)\) <br><br> Here, \(\eta\) is the learning rate which determines the size of the steps we take to reach a minimum. We need to be very careful about this parameter since high value of \(\eta\) may overshoot the minimum and very low value will reach minimum very slowly.</p></br>
   <img src="./images/grad_desc2.png" id="mob_img4">
   <figcaption>[ Figure - 5 ]</figcaption>
   <p align="justify"> There are three variants of gradient descent- Batch Gradient Descent, Stochastic Gradient Descent and Mini-batch Gradient Descent. <b> Batch gradient descent</b> computes the gradient of the cost function w.r.t to parameter w for <b> entire training data</b>. Since we need to calculate the gradients for the whole dataset to perform one parameter update, batch gradient descent can be very slow. <b> Stochastic gradient descent</b> computes the gradient for <b>each training example \(x^i\).</b> <b> Mini-batch gradient descent</b> computes the gradient for <b>every mini-batch of m training example</b>. If you are curious about gradient descent and its variants then check out <a href="http://sebastianruder.com/optimizing-gradient-descent/">this post</a> by Sebastin Ruder.
@@ -320,15 +320,17 @@
     We can modify this equation for more than one training example as follows : <br><br>
         \(w_n\) = \(w - \eta \cdot \sum\limits_{i=1}^n (y(x) - y_t) x_j\) <br><br>
 
-    <p align="justify"> Note that we are updating our weights after going through entire dataset, that is, at each step we loop iterate through entire training dataset and then we update the weights. Can you recall the name of this variant of gradient descent? This is, <b> Batch Gradient Descent</b>. Please note that some people use term <b> vanilla gradient descent </b> instead of batch gradient descent. For stochastic gradient descent, we just need to remove the summation symbol from above equation. In practice, we use <b> mini-batch gradient descent</b> which takes best of both and performs update after going through a batch of n example. For mini-batch gradient descent, we can write update rule as:<br><br>
+    <p align="justify"> Note that we are updating our weights after going through entire dataset, that is, at each step we iterate through entire training dataset and then we update the weights. Can you recall the name of this variant of gradient descent? This is, <b> Batch Gradient Descent</b>. Please note that some people use term <b> vanilla gradient descent </b> instead of batch gradient descent. For stochastic gradient descent, we just need to remove the summation symbol from above equation. In practice, we use <b> mini-batch gradient descent</b> which takes best of both and performs update after going through a batch of n example. For mini-batch gradient descent, we can write update rule as:<br><br>
 
   \(w_n = w - \eta \cdot \nabla_w J( w ; x^{(i:i+n)} ; y^{(i:i+n)})\)<br><br></p>
 
       <p align="justify"> There are some challanges with aforementioned gradient descent algorithms such as choosing a proper learning rate. Researchers have proposed several methods to solve this problems such as adam, adagrad, RMSProp. Please read <a href="http://sebastianruder.com/optimizing-gradient-descent/">this</a> excellent blog post to understand those challenges and gradient descent optimization algorithms.</p><br>
 
+      <h2 id="grad">  Summary </h2>
+
     <p align="justify"> Seems like too much work for this simple linear regression, but believe me it's not, it's very easy. Let me briefly write some takeaways,<br><br>
     <div id="points">
-      <p align="justify"> 1. For simple linear regression, equation of line is <b> y(x) = w<sub>0</sub> + w<sub>1</sub> * x<sub>1</sub></b>. Here, w<sub>0</sub> is the intercept term and w<sub>1</sub> is the slope of the line. We want to find w<sub>0</sub> and w<sub>1</sub> such that it minimize our cost function [eq num]. Both of these variables are known as <b> weights</b> or <b> parameters</b> of our model. We can easily extend this equation for multiple linear regression as shown in equation [number].</p>
+      <p align="justify"> 1. For simple linear regression, equation of line is <b> y(x) = w<sub>0</sub> + w<sub>1</sub> * x<sub>1</sub></b>. Here, w<sub>0</sub> is the intercept term and w<sub>1</sub> is the slope of the line. We want to find w<sub>0</sub> and w<sub>1</sub> such that it minimize our cost function. We can easily extend this equation for multiple linear regression as shown above.</p>
       <p align="justify"> 2. We start with <b>small positive random weights </b>.</p>
       <p align="justify"> 3. Calculate the loss/cost/objective function as follows : <br><br>
           \(J(w)\) = \(\frac{1}{2}\sum\limits_{i=1}^n (y(x^i) - y_t^i)^2\)<br>
@@ -342,7 +344,7 @@
     <div id="logreg" class="container-fluid">
       <h2> Logistic Regression </h2><br>
       <p align="justify"> <b> Logistic Regression</b> is the special case of linear regression where dependent or output variable is categorical. Don't be confused by the name of logistic regression, its a classification algorithm. Logistic in logistic regression comes from the function which is the core of this algorithm. This function is <b> logistic function </b> or <b> sigmoid function </b>. Logistic function can be written as : <br ><br>
-      &nbsp; &nbsp; &nbsp; \(y(z)\) = \(\frac{1}{1 + e^z}\)
+      &nbsp; &nbsp; &nbsp; \(y(z)\) = \(\frac{1}{1 + e^{-z}}\)
       <br><br>
       We can plot <b> y(z) </b> as follows : <br><br>
       &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="./images/sigmoid.png" width="500" id="mob_img5">
