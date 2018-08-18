@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Brief Introduction to Reinforcement and Semi-supervised Learning  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script src="../css/jquery.min.js"></script>
+  <script src="../css/bootstrap.min.js"></script>
+  <style>
+  #title{
+    background-color: #5F9EA0;
+    height:120px;
+    width:100%;
+  }
+  #title h1{
+    color:#FFFFE0;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 26px;
+    margin-top:30px;
+  }
+  #main-body{
+  	width:700px;
+  	text-align: center;
+  }
+  #main-body h1{
+  	font-weight:bold;
+  	color:#3399FF;
+  	font-family: lucida sans;
+  	padding: 30px 0px 30px 0px;
+  }
+  #title a{
+  	text-decoration: none;
+  }
+  #main-body p{
+  	word-wrap:break-word;
+  	font-size :18px;
+  	font-family: lucida sans;
+  }
+  
+  #img{
+  	margin-top:30px;
+  	margin-bottom:30px;
+  	height:250px;
+  	width:300px;
+  }
+  #cap{
+  	color:gray;
+  	font-style: italic;
+  }
+  #s-text{
+  	color:black;
+  	font-size: 22px;
+  	font-family: papyrus;
+  	font-weight: bold;
+  }
+  #head{
+  	margin:30px 0px 30px 0px;
+  }
+  #footer{
+  	height:80px;
+  	background-color: #3399FF;
+  	width:100%;
+
+  }
+  #footer p{
+  	color:white;
+  	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  	font-weight: bold;
+  	word-spacing: 4px;
+  	letter-spacing:3px;
+  	margin-top:30px;
+  }
+  #footer a{
+  	text-decoration: none;
+  	color:white;
+  }
+  #desc-blog{
+  	color:black;
+  	font-size: 15px;
+  	font-family: lucida sans;
+  }
+   @media (max-width: 768px){
+    #title h1{
+      font-size:19px;
+    }
+    #s-text{
+      font-size:14px;
+    }
+    #desc-blog{
+      font-size:14px;
+    }
+    #main-body{
+      width:330px;
+    }
+   }
+  </style>
+</head>
+<body>
+
+<div class="container text-center" id="title">
+  <a href="../blog.html"><h1> <span id="s-text">  </span> BLOG - SAVAN VISALPARA <span id="s-text">  </span></h1>
+  </a>
+  <span id="desc-blog"> [ Musings on Machine Learning ] </span><br>
+  <span id="time">Posted on 18 Aug, 2018 </span>
+</div>
+<div class="container " id="main-body">
+	<h1> Brief Introduction to Reinforcement and Semi-supervised Learning </h1>
+	
+    <h2 id="head"> Toptal </h2>
+    <p align="justify"> Toptal suggests new candidates to write a blog post on a topic related to their skill set if they want to join Toptal network. This blog post is for the same. This post extends this toptal <a href="https://www.toptal.com/machine-learning/machine-learning-theory-an-introductory-primer"> blog </a> post on machine learning basics.
+ </p>  
+
+	<p align="justify">	The aforementioned blog post discusses two types of machine learning tasks, supervised and unsupervised machine learning, with informative figures and examples. However, it does not discuss other types of machine learning tasks which are very popular research topics. This post attempts to briefly explain reinforcement learning and semi-supervised learning by using supervised learning as a reference.
+ </p> 
+
+ 	<h2 id="head"> Reinforcement Learning </h2>
+
+ 	<p align="justify"> Reinforcement learning is perhaps the most popular and exciting research field. RL methods aim to train an agent (think of ML model) using trial and error method. An agent learns to take optimal actions in an environment while environment rewards the agent based on its actions. An agent will receive good (i.e positive) reward if it performs well and bad if not. We can also think of rewards as a kind of loss function we use in supervised learning. </p>
+
+	
+	<img id="img"  src="images/rl.png" alt="reinforcement learning"> 
+	
+	<p align="justify"> You must have heard of news headlines such as "AI Beating GO Champion". The technology behind such AI system is RL. You might also have heard people especially researchers saying that RL is the true AI. Why is that? If we want to build truly AI systems then these systems must be able to learn by themselves, which is not the case in supervised learning since we have a supervisor to guide the model or agent. But in reinforcement learning, we don't have such supervisor rather an agent learns to take optimal actions by itself. Let's see how does it do that.</p>
+
+	<p align="justify"> An RL system is consists of an agent (AI model), set of possible actions that this agent can take in a given environment, and of course an environment in which an agent will take actions. Consider the example of chess, here, we have one player as an agent, the chess board is an environment, and a set of possible actions are valid moves for each piece. In supervised learning, our system learns by using guidance from the supervisor. That is, it makes predictions (i.e classification of an object/image) and receives guidance through supervisor (i.e loss function) on how to make changes (i.e update weights) to make better predictions. After doing this several times (i.e epochs), our system can make good predictions. However, in reinforcement learning, we don't have such supervisor and that's one of the reasons it is called true AI. In RL, however, we have rewards. Consider our example of chess again, if an agent (player) makes a good move (i.e taking opponent's queen without losing any piece) then our environment will give it a positive reward and vice versa. Here, our goal is to maximize the cumulative reward for this agent. </p>
+
+	<p align="justify"> We can also think of RL as a trial and error method, where an agent takes an action receives signal suggesting whether that action was good or not from an environment and based on that signal it improves over time. This is an iterative process. If you are excited about RL and the impact it can make then you should explore RL methods. One popular RL algorithm is a <a href="https://en.wikipedia.org/wiki/Q-learning"> Deep Q Learning</a>.</p>
+	<h2 id="head"> </h2>
+
+	<h2 id="head"> Semi-supervised Learning </h2>
+	<p align="justify"> Semi-supervised learning lies at the intersection of supervised and unsupervised learning. For most supervised learning methods, more data means better results. However, getting more labeled data is not only expensive but also complicated task. But we usually have a lot of unlabelled data. Semi-supervised learning comes to rescue here. Semi-supervised learning leverages both labeled and unlabeled data to train a model. Semi-supervised learning doesn't only eliminates the need of labeled data but also reduces human biases that labeled data impose on a model. Next, we'll see how semi-supervised methods work in brief. </p>
+	<p align="justify"> As I said before, semi-supervised learning is a combination of supervised and unsupervised learning. First, we do a supervised learning and then unsupervised learning. Let us take an example of image classification. Suppose, we have 10000 labeled data images and 30000 unlabeled images. By the way, this is what usually happens, we have more unlabeled data than labeled data. Semi-supervised learning allows us to leverage this unlabeled data. First of all, we train a model using labeled data. This helps model understand the types of images present in the data. Then we train a model on unlabeled data to define boundaries of image types so that it can classify given input image. </p>
+	<p align="justify">There is lot of exciting research is happening in this field. You may want to learn <a href="https://en.wikipedia.org/wiki/Semi-supervised_learning">more</a> about semi-supervised learning. Happy Learning!</p><br><br>
+	
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99746800-1', 'auto');
+  ga('send', 'pageview');
+
+
+</body>
+</html>
+	
