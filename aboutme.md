@@ -1,16 +1,13 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Graduate Student Focusing on Machine Learning
 ---
 
-My name is Inigo Montoya. I have the following qualities:
-
-- I rock a great mustache
-- I'm extremely loyal to my family
-
-What else do you need?
+My name is Savan Visalpara and I am a Master's student at The University of Texas at Dallas. I am interested in applied deep learning and adversarial machine learning. In the past, I worked as a Machine Learning Engineer for one year. In this role, I trained and deployed various kinds of Deep Learning models for different Computer Vision problems. Some of the projects I have worked on include Object Detection and Segmentation, Image-based Relocalization, and Computer Vision-based Exercise Classification and Counting.
 
 ### my history
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+- Started my Master's in Computer Science at The University of Texas at Dallas.
+- Worked at Geeky Bee AI from July 2018 to July 2019 as a Machine Learning Engineer.
+- Graduated from Gujarat Technological University with Bachelor of Engineering in Computer Engineering.
