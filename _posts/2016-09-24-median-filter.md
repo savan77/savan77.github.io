@@ -8,6 +8,7 @@ tags: [image processing, computer vision]
 comments: true
 ---
 
+
 Filtering is a technique used to modify or enhance images. For example, we can filter image to blur it. Filtering can be used for smoothing, sharpening and edge enhancement. We use filters in photo-editing apps as well. In this blog post, I will demystify filtering with an example of median filter which is a very basic non-linear digital filter. Please read my previous post on (https://blog.savanvisalpara.com/how-computers-see-image.html) How do computers see an image?</a> before going through this. Code for this post can be found [here](https://github.com/savan77/Median-Filter) on github.
 
 

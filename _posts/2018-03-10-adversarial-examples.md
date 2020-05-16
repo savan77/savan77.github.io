@@ -1,12 +1,13 @@
 ---
 layout: post
 title: Generating Adversarial Examples using PyTorch
-subtitle: Exaplanation State-of-the-art Methods to Generate Adversarial Examples with PyTorch
+subtitle: Exaplanation of State-of-the-art Methods to Generate Adversarial Examples with PyTorch
 gh-repo: savan77/Generating-Adversarial-Examples-with-PyTorch
 gh-badge: [star, fork, follow]
 tags: [deep learning, machine learning, computer vision, adversarial machine learning, adversarial examples]
 comments: true
 ---
+
 
 ## Porting to New UI
 
