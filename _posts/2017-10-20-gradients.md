@@ -11,7 +11,7 @@ comments: true
 Most of us use frameworks like TensorFlow and PyTorch to build and train machine learning models. Such frameworks allow us to focus on important things (i.e the architecure of the model) and let it do the rest of the work. Calculating gradients of the parameters is an example of the redundant work they do for us. Although these frameworks calculate gradients for us, it is always a good idea to know about various properties of them, and how they behave in different circumstances.
 
 Let's say you know how to calculate gradients manually and you are implementing a deep neural network from scratch. When we calculate the gradients manually, its always a good idea to know whether they are correct or not. We can perform gradient checking to see how much accurate the computed gradients are. We use following formula to numerically approximate the derivative at a particular point 
-<img src="https://render.githubusercontent.com/render/math?math=\theta\">.
+<img src="https://render.githubusercontent.com/render/math?math=\theta">.
 
 ![Gradient Check](/assets/img/gradientcheck.png)
 
