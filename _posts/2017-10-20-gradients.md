@@ -15,7 +15,7 @@ Let's say you know how to calculate gradients manually and you are implementing 
 
 ![Gradient Check](/assets/img/gradientcheck.png)
 
-Here, EPSILON is a small constant(i.e \(10^{-4}\)). We can compare this value with the value computed by the function which we use for gradient calculation. Next, we will discuss how extreme value of gradients causes various problems in neural networks. 
+Here, EPSILON is a small constant(i.e <img src="http://www.sciweavers.org/tex2img.php?eq=%5C%2810%5E%7B-4%7D%5C%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt="\(10^{-4}\)" width="43" height="18" />). We can compare this value with the value computed by the function which we use for gradient calculation. Next, we will discuss how extreme value of gradients causes various problems in neural networks. 
 
 ## Dead Units in ReLU
 
