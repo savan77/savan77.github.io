@@ -1,7 +1,6 @@
 ---
 layout: post
 title: A Short Note on Gradients
-subtitle: Explanation of How Computers Deal with an Image
 gh-repo: savan77/Median-Filter
 gh-badge: [star, fork, follow]
 tags: [image processing, computer vision]
