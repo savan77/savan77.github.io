@@ -58,7 +58,7 @@ social-network-links:
 #  telegram: yourname
 #  calendly: yourname
 
-paginate_path: "/blog/page:num"
+# paginate_path: "/blog/page:num"
 
 # --- General options --- #
 
